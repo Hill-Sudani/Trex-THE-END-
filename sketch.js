@@ -148,9 +148,8 @@ function draw() {
     }
   }
    else if (gameState === END) {
-
-      
-
+      background(bg);
+     
       gameOver.visible = true;
       restart.visible = true;
      
