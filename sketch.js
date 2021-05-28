@@ -115,7 +115,25 @@ function draw() {
     }
     
     //add gravity
-    trex.velocityY = trex.velocityY + 0.8
+    trex.velocityY = trex.velocityY + 0.8;
+    
+    if(score >= 200) {
+      gameState='won';
+      background('green');
+      trex.visible = false;
+      ground.visible = false;
+      cloudsGroup.destroyEach();
+      obstaclesGroup.destroyEach();
+      restart.visible = false;
+      ground.velocityX = 0;
+      trex.velocityX = 0;
+      obstaclesGroup.setVelocityEach(0);
+      cloudsGroup.setVelocityEach(0);
+      
+      fill('balck');
+      textSize(20);
+      text('YOU WON', camera.position.x, 100);
+    }
   
     //spawn the clouds
     spawnClouds();
