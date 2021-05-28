@@ -77,8 +77,6 @@ function setup() {
 }
 
 function draw() {
-  
-  background(bg);
   //displaying score.
   fill("white");
   textSize(20);
@@ -91,7 +89,7 @@ function draw() {
   
   
   if(gameState === PLAY){
-
+    background(bg);
     gameOver.visible = false;
     restart.visible = false;
     
@@ -105,7 +103,7 @@ function draw() {
     }
     
     if (ground.x < camera.position.x){
-      ground.x = camera.position.x/2;
+      ground.x = camera.position.x*2;
     }
     
     //jump when the space key is pressed
